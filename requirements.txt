@@ -1,0 +1,6 @@
+numpy
+matplotlib
+laspy
+plyfile
+numba
+scipy

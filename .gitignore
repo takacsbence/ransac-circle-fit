@@ -1,0 +1,8 @@
+# Production data and runs
+data/
+runs/
+output/
+
+# Keep example data
+!examples/data/
+``
