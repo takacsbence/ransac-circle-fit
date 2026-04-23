@@ -1,5 +1,7 @@
 import numpy as np
 import math
+import os
+import matplotlib.pyplot as plt
 from ransac_circle.models.circle import eval_inliers_fast
 
 class CircleRANSAC:

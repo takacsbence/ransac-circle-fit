@@ -1,6 +1,7 @@
 import numpy as np
 import ransac_circle.slicing.shared as shared
 from ransac_circle.ransac.circle_ransac import CircleRANSAC
+from ransac_circle.io.export import save_section_points
 
 def process_section(cut_val, args, outdir):
 
