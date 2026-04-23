@@ -3,6 +3,11 @@ data/
 runs/
 output/
 
+# Python bytecode
+__pycache__/
+*.pyc
+*.py
+
 # Keep example data
 !examples/data/
-``
+

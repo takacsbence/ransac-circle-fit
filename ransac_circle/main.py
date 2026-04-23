@@ -140,6 +140,16 @@ def main():
     if not args.quiet:
         print(f"Loaded {pc.shape[0]} points.")
 
+        pc_min = pc.min(axis=0)
+        pc_max = pc.max(axis=0)
+
+        print("Point cloud summary:")
+        print(f"  Number of points: {pc.shape[0]}")
+        print(f"  X range: {pc_min[0]:.3f} .. {pc_max[0]:.3f}")
+        print(f"  Y range: {pc_min[1]:.3f} .. {pc_max[1]:.3f}")
+        print(f"  Z range: {pc_min[2]:.3f} .. {pc_max[2]:.3f}")
+
+
     # Optional rigid transform
     any_tr = any(v is not None for v in (args.dx, args.dy, args.dz, args.a1, args.a2, args.a3))
 
@@ -167,6 +177,18 @@ def main():
         TM_inv = np.eye(4)
         if not args.quiet:
             print("No transformation applied.")
+
+    if not args.quiet:
+
+        pc_min = pc.min(axis=0)
+        pc_max = pc.max(axis=0)
+
+        print("Point cloud summary:")
+        print(f"  Number of points: {pc.shape[0]}")
+        print(f"  X range: {pc_min[0]:.3f} .. {pc_max[0]:.3f}")
+        print(f"  Y range: {pc_min[1]:.3f} .. {pc_max[1]:.3f}")
+        print(f"  Z range: {pc_min[2]:.3f} .. {pc_max[2]:.3f}")
+
        
     # Shared memory for workers
     shm = shared_memory.SharedMemory(create=True, size=pc.nbytes)
